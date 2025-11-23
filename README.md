@@ -1,6 +1,3 @@
-This is the final, complete version of your GitHub README. I have ensured all internal links are correctly formatted for GitHub, included the interactive diagram link, placed the badges in your specified order, and formatted the author details as requested.
-
-You can copy and paste this entire block directly into your `README.md`.
 
 ````markdown
 # End-to-End Event-Driven Incremental ETL Pipeline on AWS
