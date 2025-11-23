@@ -2,21 +2,21 @@
 
 Production-grade, serverless data pipeline that reliably processes and enriches daily airline flight data—automating the entire flow from S3 landing to a clean Redshift fact table.
 
-[](https://aws.amazon.com/)
-[](https://aws.amazon.com/glue/)
-[](https://aws.amazon.com/step-functions/)
-[](https://aws.amazon.com/redshift/)
-[](https://aws.amazon.com/eventbridge/)
-[](https://www.python.org/)
-[](https://spark.apache.org/)
-[](https://github.com/features/actions)
+[![AWS](https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+[![AWS Glue](https://img.shields.io/badge/AWS_Glue-FF9900?style=for-the-badge&logo=aws-glue&logoColor=white)](https://aws.amazon.com/glue/)
+[![AWS Step Functions](https://img.shields.io/badge/AWS_Step_Functions-FF4F8B?style=for-the-badge&logo=aws-step-functions&logoColor=white)](https://aws.amazon.com/step-functions/)
+[![AWS Redshift](https://img.shields.io/badge/Amazon_Redshift-4A6F9B?style=for-the-badge&logo=amazon-redshift&logoColor=white)](https://aws.amazon.com/redshift/)
+[![AWS EventBridge](https://img.shields.io/badge/AWS_EventBridge-6F8E96?style=for-the-badge&logo=amazon-eventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
+[![AWS SNS](https://img.shields.io/badge/AWS_SNS-FF9900?style=for-the-badge&logo=amazon-sns&logoColor=white)](https://aws.amazon.com/sns/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/features/actions)
 
 ▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK]
 
-**🔗Project Architecture [View Diagram]**
+**🔗Project Architecture [View Diagram]** 
 
-📊 **Jump to Results & Validation [Execution--results](https://www.google.com/search?q=%23execution--results)**
-
+📊 **Jump to Results & Validation [Execution--results](#execution--results)**
 -----
 
 ## TL;DR for Recruiters (30-Sec Summary)
