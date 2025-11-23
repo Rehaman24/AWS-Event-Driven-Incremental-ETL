@@ -3,14 +3,16 @@
 Production-grade, serverless data pipeline that reliably processes and enriches daily airline flight data—automating the entire flow from S3 landing to a clean Redshift fact table.
 
 [![AWS](https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
-[![AWS Glue](https://img.shields.io/badge/AWS_Glue-FF9900?style=for-the-badge&logo=aws-glue&logoColor=white)](https://aws.amazon.com/glue/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/)
+[![Amazon S3](https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)](https://aws.amazon.com/s3/)
 [![AWS Step Functions](https://img.shields.io/badge/AWS_Step_Functions-FF4F8B?style=for-the-badge&logo=aws-step-functions&logoColor=white)](https://aws.amazon.com/step-functions/)
+[![AWS Glue](https://img.shields.io/badge/AWS_Glue-FF9900?style=for-the-badge&logo=aws-glue&logoColor=white)](https://aws.amazon.com/glue/)
+[![Glue Crawler](https://img.shields.io/badge/Glue_Crawler-FF9900?style=for-the-badge&logo=aws-glue&logoColor=white)](https://aws.amazon.com/glue/)
+[![Glue Catalog](https://img.shields.io/badge/Glue_Catalog-FF9900?style=for-the-badge&logo=aws-glue&logoColor=white)](https://aws.amazon.com/glue/catalog/)
 [![AWS Redshift](https://img.shields.io/badge/Amazon_Redshift-4A6F9B?style=for-the-badge&logo=amazon-redshift&logoColor=white)](https://aws.amazon.com/redshift/)
 [![AWS EventBridge](https://img.shields.io/badge/AWS_EventBridge-6F8E96?style=for-the-badge&logo=amazon-eventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
 [![AWS SNS](https://img.shields.io/badge/AWS_SNS-FF9900?style=for-the-badge&logo=amazon-sns&logoColor=white)](https://aws.amazon.com/sns/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)](https://spark.apache.org/)
-[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/features/actions)
 
 ▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK]
 
@@ -234,9 +236,9 @@ The video demonstration confirms the pipeline's operational success:
 
 ## Author
 
-**[YOUR NAME]**
-Data Engineer | 3 Years OfExperience
+**[Rehaman Ali Shaik]**
+ Data Engineer | 3 Years OfExperience
 **LinkedIn**: [YOUR LINKEDIN PROFILE LINK]
-**GitHub**: [YOUR GITHUB PROFILE LINK]
+**GitHub**: [https://github.com/Rehaman24]
 
-**Last Updated**: [MONTH YEAR] (November 2025)
+**Last Updated**: November 2025
