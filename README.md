@@ -161,6 +161,8 @@ GROUP BY
 ORDER BY
   avg_dep_delay DESC;
 ```
+![Carrier Performance Comparison](Screenshots/Carrier_Performance_Comparison.png)
+
 **3. Route Optimization and Profitability Analysis**
 *Impact*: Identify the specific flight routes (city to city) that have the highest frequency of severe delays, which directly impacts fuel costs and crew scheduling.
 
@@ -179,6 +181,8 @@ ORDER BY
 LIMIT 10;
 ```
 
+![Route Optimization Profitability Analysis](Screenshots/Route_Optimization_Profitability_Analysis.png)
+
 **4. Airport Congestion and SLA Monitoring**
 *Impact*: Track total traffic volume and average delay per enriched airport to monitor congestion and ensure that airport operators are meeting Service Level Agreements (SLAs).
 
@@ -196,6 +200,7 @@ HAVING
 ORDER BY
   avg_dep_delay_minutes DESC;
 ```
+![Airport Congestion SLA Monitoring](Screenshots/Airport_Congestion_SLA_Monitoring.png)
 
 **5. Predictive Maintenance and Fleet Flagging**
 *Impact*: Identify the carrier with the highest proportion of severely delayed flights (\> 60 minutes). These patterns can serve as a trigger for the maintenance team to proactively inspect a specific fleet.
@@ -215,6 +220,7 @@ HAVING
 ORDER BY
   pct_severe_delays DESC;
 ```
+![Predictive Maintenance Fleet Flagging](Screenshots/Predictive_Maintenance_Fleet_Flagging.png)
 
 ## 📁 Code Files
 
@@ -296,11 +302,13 @@ ORDER BY
 
 ## Execution & Results
 
-The video demonstration confirms the pipeline's operational success:
-
 1.  **Trigger:** A file upload to S3 initiates the workflow.
 2.  **Monitor:** The AWS Step Functions graph view shows the State Machine executing all tasks successfully (green).
 3.  **Validate:** The final SQL query on the Redshift fact table displays the fully enriched columns, confirming that the two-pass join successfully populated the departure and arrival city/airport names.
+
+This project uses AWS Step Functions to orchestrate the incremental ETL process. The following screenshot confirms a successful end-to-end execution, demonstrating the pipeline processes the data and writes the results to Redshift.
+
+![AWS Step Functions Execution Success View](Screenshots/Stepfunctions_Execution_Success.png)
 
 -----
 
