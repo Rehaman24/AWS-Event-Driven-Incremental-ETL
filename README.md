@@ -142,7 +142,7 @@ GROUP BY
 ORDER BY
   avg_departure_delay DESC;
 ```
-![Screenshot: Delay Analysis by Enriched Location](Screenshots/Delay Analysis by Enriched Location.png)
+
 ![Delay Analysis by Enriched Location ](Screenshots/Delay Analysis by Enriched Location.png)
 
 **2. Carrier Performance Comparison**
