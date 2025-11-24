@@ -143,7 +143,7 @@ ORDER BY
   avg_departure_delay DESC;
 ```
 
-![Delay Analysis by Enriched Location](Screenshots/Delay Analysis by Enriched Location.png)
+![Delay Analysis by Enriched Location](Screenshots/Delay_Analysis_Enriched_Location.png)
 
 **2. Carrier Performance Comparison**
 *Impact*: Management can compare the performance of different carriers based on average departure and arrival delays in a single query.
