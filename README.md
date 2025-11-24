@@ -16,7 +16,7 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 
 ▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK]
 
-**🔗Project Architecture [https://gitdiagram.com/Rehaman24/AWS-Event-Driven-Incremental-ETL]**
+**🔗📄 [Project Architecture](Screenshots/Architecture.png)**
 
 **📊Jump to Results & Validation [Execution–results](#business-impact--real-world-applications)**
 
