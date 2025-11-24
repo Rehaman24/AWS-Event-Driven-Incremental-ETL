@@ -48,7 +48,7 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 ### 🎯 For Recruiters (1 min)
 Get a quick snapshot of the project and impact:
 
-[Business Impact & Applications](#business-impact--real-world-applications) → [Key Metrics](#execution--results) → [Highlights](#-project-architecture)
+[Business Impact & Applications](#business-impact--real-world-applications)  → [Highlights](#-project-architecture)
 
 ### 👨‍💻 For Engineers (5 min)
 Jump directly to technical implementation details:
