@@ -1,5 +1,3 @@
-
-````markdown
 # End-to-End Event-Driven Incremental ETL Pipeline on AWS
 
 Production-grade, serverless data pipeline that reliably processes and enriches daily airline flight data—automating the entire flow from S3 landing to a clean Redshift fact table.
@@ -18,51 +16,65 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 
 ▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK]
 
-**🔗Project Architecture [Interactive Diagram]** 
+**🔗Project Architecture [https://gitdiagram.com/Rehaman24/AWS-Event-Driven-Incremental-ETL]**
 
-📊 **Jump to Results & Validation [Execution & Results](#execution--results)**
+**📊Jump to Results & Validation [Execution–results](#business-impact--real-world-applications)**
 
-***
+
+-----
 
 ## TL;DR for Recruiters (30-Sec Summary)
-- **What it does:** Automates the daily ingestion and enrichment of raw flight data, joining it with a Redshift dimension table to load a clean fact table.
-- **Technical stack:** **PySpark** + **AWS Serverless** (Glue, Step Functions, EventBridge) + **Redshift** + **SNS Alerting**.
-- **Key Features:** **Incremental processing** using AWS Glue Job Bookmarking; **Robust orchestration** with Step Functions to manage Glue Crawler/Job dependencies.
-- **Real-world impact:** Ensures zero-ops automation, data quality (enriched city/airport names), and cost optimization by avoiding full data scans.
-- **Production features:** Event-driven trigger, automated dependency management via Step Function polling, and immediate success/failure notifications via SNS.
 
-***
+  - **What it does:** Automates the daily ingestion and enrichment of raw flight data, joining it with a Redshift dimension table to load a clean fact table.
+  - **Technical stack:** **PySpark** + **AWS Serverless** (Glue, Step Functions, EventBridge) + **Redshift** + **SNS Alerting**.
+  - **Key Features:** **Incremental processing** using AWS Glue Job Bookmarking; **Robust orchestration** with Step Functions to manage Glue Crawler/Job dependencies.
+  - **Real-world impact:** Ensures zero-ops automation, data quality (enriched city/airport names), and cost optimization by avoiding full data scans.
+  - **Production features:** Event-driven trigger, automated dependency management via Step Function polling, and immediate success/failure notifications via SNS.
+
+-----
 
 ## Core Skills
-- **Data Processing:** PySpark (AWS Glue DynamicFrames, Transformations, Two-Pass Joins).
-- **Orchestration:** AWS Step Functions (State Machine design, Task/Choice/Wait states, Synchronous Glue execution).
-- **Cloud Platform:** AWS (S3, Glue, Redshift, EventBridge, SNS, IAM Role management).
-- **Architecture:** Serverless, Event-Driven, Incremental ETL, Data Lake/Warehouse Integration.
-- **Language:** Python, SQL
 
-***
+  - **Data Processing:** PySpark (AWS Glue DynamicFrames, Transformations, Two-Pass Joins).
+  - **Orchestration:** AWS Step Functions (State Machine design, Task/Choice/Wait states, Synchronous Glue execution).
+  - **Cloud Platform:** AWS (S3, Glue, Redshift, EventBridge, SNS, IAM Role management).
+  - **Architecture:** Serverless, Event-Driven, Incremental ETL, Data Lake/Warehouse Integration.
+  - **Language:** Python, SQL
+
+-----
 
 ## Quick Start Guide
 
-**👔 For Recruiters (30 sec):** [TL;DR Summary](#tldr-for-recruiters-30-sec-summary) → [Watch Demo](#-watch-the-full-demo-code-ui-results) → [Business Impact](#business-impact--real-world-applications)
+### 🎯 For Recruiters (1 min)
+Get a quick snapshot of the project and impact:
 
-**👨‍💻 For Engineers (5 min):** [Pipeline Components](#pipeline-components) → [Architecture](#project-architecture-interactive-diagram) → [Code Files](#code-files)
+[Business Impact & Applications](#business-impact--real-world-applications) → [Key Metrics](#execution--results) → [Highlights](#-project-architecture)
 
-**🔍 For Hiring Managers (2 min):** [Results & Metrics](#execution--results) → [Production Features](#production-ready-features) → [Trade-offs](#trade-offs-and-design-rationale)
+### 👨‍💻 For Engineers (5 min)
+Jump directly to technical implementation details:
 
-***
+[Pipeline Components](#pipeline-components) → [Project Architecture](#-project-architecture) → [Code Files](#-code-files)
+
+### 🔍 For Hiring Managers (2 min)
+Focus on results, production features, and architecture overview:
+
+[Results & Metrics](#execution--results) → [Production-Ready Features](#production-ready-features) → [Interactive Diagram](#-project-architecture)
+-----
 
 ### 📊 Impact at a Glance
+
 | Metric | Before (Manual or Basic Batch) | After (This Pipeline) | Improvement |
 |:---|:---|:---|:---|
 | **Pipeline Trigger** | Cron/Manual Job Scheduler | Event-Driven (S3 Object Created) | **100% Automation** 🤖 |
 | **Data Volume Processed** | All files every run | Only **New** files (via Bookmarking) | **Cost Efficiency** 💸 |
 | **Dependency Management** | Simple task chain or manual check | Automated **Crawler Polling** (Step Functions) | **Zero Race Conditions** 🛡️ |
 | **Data Quality (Enrichment)** | Raw IDs (`OriginAirportID`) | Full Names (`dep_city`, `arr_airport`) | **Analytics Ready** ✅ |
+| **Error Alerting** | Logs only | Instant SNS Notification | **Immediate Response** 📧 |
 
-***
+-----
 
 ## Technologies & Tools
+
 **Cloud Platform**: AWS (S3, Glue, Redshift, EventBridge, Step Functions, SNS)
 **Orchestration**: AWS Step Functions
 **Data Processing**: AWS Glue (PySpark)
@@ -70,9 +82,18 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 **Storage**: Amazon S3
 **Language**: Python, SQL
 
-***
+**Key AWS Services & Concepts**:
 
-## Overview
+  - **AWS EventBridge**: Triggers the state machine upon S3 file creation.
+  - **AWS Glue Crawler**: Registers metadata for raw S3 data and Redshift dimensions.
+  - **AWS Step Functions**: Orchestrates the sequential execution of Crawler $\rightarrow$ Glue Job, including conditional polling.
+  - **Glue Job Bookmarking**: Enables **incremental processing** by tracking processed S3 data partitions.
+  - **`glue:startJobRun.sync`**: Ensures the orchestrator waits for the ETL job to complete before proceeding.
+  - **AWS SNS**: Provides immediate success and failure notifications for the entire workflow.
+
+-----
+
+## Pipeline Components
 
 This project implements a fully serverless, end-to-end data pipeline for daily flight data ingestion.
 
@@ -84,7 +105,7 @@ This project implements a fully serverless, end-to-end data pipeline for daily f
 6.  **Load:** The resulting enriched fact data is written to the target `daily_flights_processed` table in Redshift.
 7.  **Alert:** The Step Function publishes a **Success or Failure message** to an SNS Topic, based on the outcome of the Glue Job.
 
-***
+-----
 
 ## Trade-offs and Design Rationale
 
@@ -98,13 +119,13 @@ This batch-oriented, event-driven architecture was chosen over alternative solut
 | **Redshift Target** | Provides a highly performant **SQL data warehouse** for joins and BI reporting, which is superior for complex analytics. | Higher per-GB cost than writing to a simple Parquet lake (S3); requires managing Redshift connections and cluster sizing. |
 | **Two-Pass Join** | Ensures full enrichment of both **departure and arrival details** in the final denormalized fact table using standard Glue/Spark joins. | Less efficient than a single complex SQL join in Redshift (ELT); requires intermediate memory/shuffle in Glue. |
 
-***
+-----
 
 ## Business Impact & Real-World Applications
 
-The pipeline produces the **`daily_flights_processed`** table in Redshift, enabling valuable analytical queries:
+The pipeline produces the **`daily_flights_processed`** table in Redshift, enabling valuable analytical queries
 
-**1. Delay Analysis by Enriched Location:**
+**1. Delay Analysis by Enriched Location**
 *Impact*: Analysts can instantly identify the cities and states responsible for the longest average delays.
 
 ```sql
@@ -119,12 +140,78 @@ GROUP BY
   dep_state
 ORDER BY
   avg_departure_delay DESC;
-````
+```
 
-**2. Carrier Performance Comparison:**
+**2. Carrier Performance Comparison**
 *Impact*: Management can compare the performance of different carriers based on average departure and arrival delays in a single query.
 
------
+```sql
+SELECT
+  carrier,
+  AVG(dep_delay) AS avg_dep_delay,
+  AVG(arr_delay) AS avg_arr_delay,
+  COUNT(*) AS total_flights
+FROM
+  airlines.daily_flights_processed
+GROUP BY
+  carrier
+ORDER BY
+  avg_dep_delay DESC;
+```
+**3. Route Optimization and Profitability Analysis**
+*Impact*: Identify the specific flight routes (city to city) that have the highest frequency of severe delays, which directly impacts fuel costs and crew scheduling.
+
+```sql
+SELECT
+  dep_city,
+  arr_city,
+  AVG(dep_delay + arr_delay) AS avg_total_delay_minutes
+FROM
+  airlines.daily_flights_processed
+GROUP BY
+  dep_city,
+  arr_city
+ORDER BY
+  avg_total_delay_minutes DESC
+LIMIT 10;
+```
+
+**4. Airport Congestion and SLA Monitoring**
+*Impact*: Track total traffic volume and average delay per enriched airport to monitor congestion and ensure that airport operators are meeting Service Level Agreements (SLAs).
+
+```sql
+SELECT
+  dep_airport,
+  COUNT(*) AS total_flights,
+  AVG(dep_delay) AS avg_dep_delay_minutes
+FROM
+  airlines.daily_flights_processed
+GROUP BY
+  dep_airport
+HAVING
+  total_flights > 100 -- Focus on airports with major volume
+ORDER BY
+  avg_dep_delay_minutes DESC;
+```
+
+**5. Predictive Maintenance and Fleet Flagging**
+*Impact*: Identify the carrier with the highest proportion of severely delayed flights (\> 60 minutes). These patterns can serve as a trigger for the maintenance team to proactively inspect a specific fleet.
+
+```sql
+SELECT
+  carrier,
+  COUNT(*) AS total_flights,
+  SUM(CASE WHEN dep_delay >= 60 THEN 1 ELSE 0 END) AS severe_delay_count,
+  (severe_delay_count * 100.0) / total_flights AS pct_severe_delays
+FROM
+  airlines.daily_flights_processed
+GROUP BY
+  carrier
+HAVING
+  total_flights > 500 -- Focus on carriers with significant volume
+ORDER BY
+  pct_severe_delays DESC;
+```
 
 ## 📁 Code Files
 
@@ -137,31 +224,39 @@ ORDER BY
 
 -----
 
-## 🔗 Project Architecture [Interactive Diagram]
-
-The complete workflow is visualized here: [https://gitdiagram.com/Rehaman24/AWS-Event-Driven-Incremental-ETL](https://gitdiagram.com/Rehaman24/AWS-Event-Driven-Incremental-ETL)
+## Architecture
 
 ```
-+----------------+  (1. New File Upload)  +--------------------+
-|   S3 (Raw Data)| ---------------------->| AWS EventBridge    |
-+--------+-------+                        +---------+----------+
-         ^                                          |
-         | (Read Source Data)                       v (2. Invoke)
-         |                               +-------------------------+
-+--------+-------+                       | AWS Step Functions      |
-| Redshift (Dim)| <----------------------+ (3. Orchestration Flow) |
-+--------+-------+                       +------------+------------+
-         ^                                            |
-         | (Write Final Data)                         v (4. Start/Poll)
-+--------+-------+                       +-------------------------+
-| Redshift (Fact)| <--------------------+ AWS Glue (ETL Job)      |
-+--------+-------+  (5. Load Output)    | - PySpark, Bookmarking  |
-                                        +------------+------------+
-                                                     | (Alerts)
-                                                     v
-                                        +-------------------------+
-                                        | AWS SNS (Notifications) |
-                                        +-------------------------+
++-----------------------------------+
+| S3 Raw Bucket (New .csv files)    |
++----------------------+------------+
+                       |
+                       v (S3:ObjectCreated Event)
++-----------------------------------+
+| AWS EventBridge Rule              |
++----------------------+------------+
+                       |
+                       v (Target)
++-----------------------------------+
+| AWS Step Function (Orchestrator)  |
+| 1. StartFlightS3RawCrawler        |
+| 2. GetCrawlerStatus (Polling Loop)|<-- DEPENDENCY MANAGEMENT
+| 3. TriggerGlueJob (Sync)          |
++-------------+---------------------+
+               |                    |
+               v                    v
++--------------+-----------+ +-----------------+
+| AWS Glue ETL Job (PySpark)| | SNS Topic       |<-- ALERTING
+| - Bookmarking             | | - Success/Failure|
+| - Enrichment Joins        | +-----------------+
++------+--------------------+
+        |
+        v
++-----------------------------------+
+| Amazon Redshift                   |
+| - dim_airport_codes               |
+| - daily_flights_processed (Fact)  |
++-----------------------------------+
 ```
 
 -----
@@ -217,12 +312,9 @@ The video demonstration confirms the pipeline's operational success:
 
 ## Author
 
-**Rehaman Ali Shaik]**
-Data Engineer | 3 Years Experience
+**[YOUR NAME]**
+Data Engineer | [YEARS] Experience
 **LinkedIn**: [YOUR LINKEDIN PROFILE LINK]
-**GitHub**: [https://github.com/Rehaman24]
+**GitHub**: [YOUR GITHUB PROFILE LINK]
 
-**Last Updated**: Nov,25
-
-```
-```
+**Last Updated**: [MONTH YEAR] (e.g., November 2025)
