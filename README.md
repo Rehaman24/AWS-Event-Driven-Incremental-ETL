@@ -16,7 +16,7 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 
 ▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK]
 
-**🔗📄 [Project Architecture](Screenshots/Architecture.png)**
+**🔗Architecture [Project Architecture](Screenshots/Architecture.png)**
 
 **📊Jump to Results & Validation [Execution–results](#business-impact--real-world-applications)**
 
@@ -48,17 +48,17 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 ### 🎯 For Recruiters (1 min)
 Get a quick snapshot of the project and impact:
 
-[Business Impact & Applications](#business-impact--real-world-applications)  → [Highlights](#-project-architecture)
+[Business Impact & Applications](#business-impact--real-world-applications)  → [Highlights](#architecture)
 
 ### 👨‍💻 For Engineers (5 min)
 Jump directly to technical implementation details:
 
-[Pipeline Components](#pipeline-components) → [Project Architecture](#-project-architecture) → [Code Files](#-code-files)
+[Pipeline Components](#pipeline-components) → [Project Architecture](Screenshots/Architecture.png) → [Code Files](#-code-files)
 
 ### 🔍 For Hiring Managers (2 min)
 Focus on results, production features, and architecture overview:
 
-[Results & Metrics](#execution--results) → [Production-Ready Features](#production-ready-features) → [Interactive Diagram](#-project-architecture)
+[Results & Metrics](#execution--results) → [Production-Ready Features](#production-ready-features) → [Project Architecture](Screenshots/Architecture.png)
 
 -----
 
@@ -142,6 +142,7 @@ GROUP BY
 ORDER BY
   avg_departure_delay DESC;
 ```
+![Screenshot: Delay Analysis by Enriched Location](Screenshots/Delay Analysis by Enriched Location.png)
 
 **2. Carrier Performance Comparison**
 *Impact*: Management can compare the performance of different carriers based on average departure and arrival delays in a single query.
