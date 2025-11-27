@@ -279,6 +279,27 @@ ORDER BY
   * **Purpose:** Static lookup table used for data enrichment.
   * **Schema (Input):** `airport_id` (BIGINT), `city` (VARCHAR), `state` (VARCHAR), `name` (VARCHAR).
 
+   ```sql
+    
+CREATE TABLE airlines.dim_airport_codes (
+    airport_id BIGINT,
+    city VARCHAR(100),
+    state VARCHAR(100),
+    name VARCHAR(200)
+);
+
+   ```
+**COPY from S3 to Redshift`**
+```sql
+COPY airlines.airports_dim
+FROM 's3://airlines-dataset-gds/airports.csv' 
+IAM_ROLE 'arn:aws:iam::348532040329:role/service-role/AmazonRedshift-CommandsAccessRole-20230820T081203'
+DELIMITER ','
+IGNOREHEADER 1
+REGION 'us-east-1';
+
+```
+
 **Fact Table: `airlines.daily_flights_processed`**
 
   * **Purpose:** Clean, enriched final output, appended to incrementally.
@@ -323,9 +344,9 @@ This project uses AWS Step Functions to orchestrate the incremental ETL process.
 
 ## Author
 
-**[YOUR NAME]**
-Data Engineer | [YEARS] Experience
+**[Rehaman Ali Shaik]**
+Data Engineer | 2 [YEARS] Experience
 **LinkedIn**: [YOUR LINKEDIN PROFILE LINK]
 **GitHub**: [YOUR GITHUB PROFILE LINK]
 
-**Last Updated**: [MONTH YEAR] (e.g., November 2025)
+**Last Updated**: [November 2025]
