@@ -308,7 +308,20 @@ REGION 'us-east-1';
       * `dep_airport`, `arr_airport` (VARCHAR) - *Enriched*
       * `dep_city`, `arr_city` (VARCHAR) - *Enriched*
       * `dep_state`, `arr_state` (VARCHAR) - *Enriched*
+```sql
+CREATE TABLE airlines.daily_flights_processed (
+    carrier VARCHAR(10),
+    dep_airport VARCHAR(200),
+    arr_airport VARCHAR(200),
+    dep_city VARCHAR(100),
+    arr_city VARCHAR(100),
+    dep_state VARCHAR(100),
+    arr_state VARCHAR(100),
+    dep_delay BIGINT,
+    arr_delay BIGINT
+);
 
+```
 -----
 
 ## Production-Ready Features
