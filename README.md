@@ -14,7 +14,7 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 [![AWS EventBridge](https://img.shields.io/badge/AWS_EventBridge-6F8E96?style=for-the-badge&logo=amazon-eventbridge&logoColor=white)](https://aws.amazon.com/eventbridge/)
 [![AWS SNS](https://img.shields.io/badge/AWS_SNS-FF9900?style=for-the-badge&logo=amazon-sns&logoColor=white)](https://aws.amazon.com/sns/)
 
-▶️ **Watch the Full Demo (Code, UI, Results)** [LOOM DEMO LINK]
+▶️ **Watch the Full Demo (Code, UI, Results)** [https://www.loom.com/share/e27af07c91ed4cfabe555775a53b5d7b]
 
 **🔗Architecture [Project Architecture](Screenshots/Architecture.png)**
 
@@ -48,7 +48,7 @@ Production-grade, serverless data pipeline that reliably processes and enriches 
 ### 🎯 For Recruiters (1 min)
 Get a quick snapshot of the project and impact:
 
-[Business Impact & Applications](#business-impact--real-world-applications)  → [Highlights](#architecture)
+[Business Impact & Applications](#business-impact--real-world-applications)  → [Tradeoffs](#Trade-offs and Design Rationale)
 
 ### 👨‍💻 For Engineers (5 min)
 Jump directly to technical implementation details:
@@ -357,9 +357,9 @@ This project uses AWS Step Functions to orchestrate the incremental ETL process.
 
 ## Author
 
-**[Rehaman Ali Shaik]**
-Data Engineer | 2 [YEARS] Experience
+**Rehaman Ali Shaik**
+Data Engineer | 2 Years Of Experience
 **LinkedIn**: [YOUR LINKEDIN PROFILE LINK]
-**GitHub**: [YOUR GITHUB PROFILE LINK]
+**GitHub**: https://github.com/Rehaman24
 
-**Last Updated**: [November 2025]
+**Last Updated**: November 2025
