@@ -355,7 +355,32 @@ This project uses AWS Step Functions to orchestrate the incremental ETL process.
 
 -----
 
-## Author
+## 💬 Feedback Welcome
+
+This is a portfolio project and I’m actively seeking feedback from sr data engineers, and Data Engineering managers on the design and implementation of this event‑driven airline pipeline.
+
+### How to Provide Feedback
+
+**📋 Structured Review**
+- Open a new **Discussion** in this repo (Code Review / Architecture Review)
+- Share your thoughts on the Step Functions orchestration, Glue job design, or Redshift modeling
+
+**💡 Quick Feedback**
+- ⭐ Star the repo if you found it useful
+- 🐛 Open an **Issue** for bugs, edge cases, or technical improvements
+- 💬 Start a **Discussion** for general comments or “what you’d do differently” in production
+
+### What I’m Looking For
+
+- Feedback on code quality and AWS Glue / Step Functions best practices  
+- Architecture suggestions for scaling, cost optimization, and resilience  
+- Interview‑style critique: what you would ask or challenge in a hiring loop  
+- Real‑world production concerns I should address next (DQ checks, IaC, monitoring, etc.)
+
+All feedback is public and helps demonstrate how I incorporate suggestions and keep leveling up as a data engineer.
+
+
+## Connect with me
 
 **Rehaman Ali Shaik**
 Data Engineer | 2 Years Of Experience
